@@ -21,7 +21,7 @@ To run the project, make sure you have the following:
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/cards-memory.git
+    git clone https://github.com/Thiennn262626/cards-memory.git
     cd cards-memory
     ```
 
