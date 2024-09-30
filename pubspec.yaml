@@ -1,0 +1,128 @@
+name: cards
+description: "A new Flutter project."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.4.3 <4.0.0'
+  flutter: 3.22.2
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^3.0.0
+
+  dartx: ^1.1.0
+  get_it: ^7.2.0
+  intl: ^0.18.0
+  bloc: ^8.1.0
+  flutter_bloc: ^8.1.1
+  freezed_annotation: ^2.2.0
+
+  ## Network
+  retrofit: ^4.0.1
+  dio: ^5.1.1
+
+  ## Data format & Json format
+  json_serializable: ^6.6.1
+  equatable: ^2.0.3
+  json_annotation: ^4.8.0
+
+  ## Navigation
+  auto_route: ^6.4.0
+
+  ## UI
+  carousel_slider: ^5.0.0
+  badges: ^3.1.2
+
+
+  build_runner: ^2.3.3
+  retrofit_generator: ^6.0.0+1
+  flutter_gen_runner: ^5.3.0
+  auto_route_generator: ^6.2.0
+  flutter_flavorizr: ^2.1.4
+  very_good_analysis: ^4.0.0+1
+  freezed: ^2.2.0
+
+flutter_gen:
+  integrations:
+    flutter_svg: true
+    flare_flutter: false
+    null_safety: true
+
+flutter:
+  uses-material-design: true
+  generate: false
+  assets:
+    - assets/icons/
+    - assets/images/
+
+#  fonts:
+#    - family: AppIcon
+#      fonts:
+#        - asset: assets/fonts/AppIcon.ttf
+#    - family: Inter
+#      fonts:
+#        - asset: assets/fonts/Inter-Black.ttf
+#          weight: 900
+#        - asset: assets/fonts/Inter-Bold.ttf
+#          weight: 700
+#        - asset: assets/fonts/Inter-ExtraBold.ttf
+#          weight: 800
+#        - asset: assets/fonts/Inter-Light.ttf
+#          weight: 300
+#        - asset: assets/fonts/Inter-Medium.ttf
+#          weight: 500
+#        - asset: assets/fonts/Inter-SemiBold.ttf
+#          weight: 600
+#        - asset: assets/fonts/Inter-Regular.ttf
+#          weight: 400
+#        - asset: assets/fonts/Inter-Thin.ttf
+#          weight: 100
+
+
+targets:
+  $default:
+    builders:
+      hive_generator:
+        enabled: false
+        generate_for:
+          - lib/data/**.dart
+      json_serializable:
+        options:
+          explicit_to_json: true
+        generate_for:
+          include:
+            - "lib/**/bloc/**.dart"
+            - "lib/**/blocs/**.dart"
+          exclude:
+            - lib/**.g.dart
+            - lib/**.freezed.dart
+            - lib/**/pages/**.dart
+      freezed:
+        generate_for:
+          include:
+            - lib/**/bloc/**.dart
+            - lib/**/blocs/**.dart
+            - lib/**/entities/**.dart
+            - lib/**/models/**.dart
+          exclude:
+            - lib/**.g.dart
+            - lib/**.freezed.dart
+            - lib/**/widgets/**.dart
+            - lib/**/pages/**.dart
+      mockito:mockBuilder:
+        enabled: false
+      auto_route_generator:auto_route_generator:
+        generate_for:
+          - lib/views/**/**/*_page.dart
+      auto_route_generator:auto_router_generator: # this for @AutoRouterConfig
+        generate_for:
+          - lib/app_routes/app_routes.dart
