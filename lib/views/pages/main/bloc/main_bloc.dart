@@ -18,6 +18,7 @@ class MainBloc extends Bloc<MainEvent, MainState> {
     on<_PickMyCardsEvent>(_onPickMyCardsEvent);
     on<_SortMyCardsEvent>(_onSortMyCardsEvent);
     on<_PlayCardsEvent>(_onPlayCardsEvent);
+    on<_ToggleSelectCardEvent>(_onToggleSelectCardEvent);
   }
   FutureOr<void> _onMainInitialEvent(
       _MainInitialEvent event, Emitter<MainState> emit) {
@@ -43,10 +44,21 @@ class MainBloc extends Bloc<MainEvent, MainState> {
       _PickMyCardsEvent event, Emitter<MainState> emit) {
     // Logic to pick cards from the card list to the player's hand
     if (state.cardList.deck != null && state.cardList.deck!.isNotEmpty) {
-      final myCards = CardsEntity(
-          deck: state.cardList.deck!
-              .sublist(0, 2)); // Example: picking the first two cards
-      emit(state.copyWith(myCards: myCards, picked: true));
+      // Tạo danh sách các lá bài mới với thuộc tính isFaceUp đã được thay đổi
+      final updatedDeck = state.cardList.deck!.map((card) {
+        // Kiểm tra xem lá bài hiện tại có nằm trong danh sách selectedCards không
+        if (state.selectedCards.contains(card)) {
+          return card.copyWith(isFaceUp: false); // Đổi isFaceUp thành false
+        }
+        return card; // Giữ nguyên nếu không có trong selectedCards
+      }).toList();
+
+      final myCards = CardsEntity(deck: state.selectedCards);
+      emit(state.copyWith(
+          cardList: state.cardList.copyWith(deck: updatedDeck),
+          myCards: myCards,
+          picked: true,
+          selectedCards: []));
     }
   }
 
@@ -73,5 +85,20 @@ class MainBloc extends Bloc<MainEvent, MainState> {
       emit(state.copyWith(myCards: updatedMyCards));
       // Add additional logic for handling the played card
     }
+  }
+
+  // Hàm xử lý chọn/deselect lá bài
+  FutureOr<void> _onToggleSelectCardEvent(
+      _ToggleSelectCardEvent event, Emitter<MainState> emit) {
+    final card = event.card;
+    List<CardEntity> updatedSelectedCards = List.from(state.selectedCards);
+
+    if (updatedSelectedCards.contains(card)) {
+      updatedSelectedCards.remove(card); // Nếu đã chọn rồi thì bỏ chọn
+    } else {
+      updatedSelectedCards
+          .add(card); // Nếu chưa chọn thì thêm vào danh sách chọn
+    }
+    emit(state.copyWith(selectedCards: updatedSelectedCards));
   }
 }

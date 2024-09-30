@@ -13,7 +13,7 @@ CardEntity _$CardEntityFromJson(Map<String, dynamic> json) => CardEntity(
       value: (json['value'] as num).toInt(),
       indexRank: (json['indexRank'] as num).toInt(),
       indexSuit: (json['indexSuit'] as num).toInt(),
-      isFaceUp: json['isFaceUp'] as bool? ?? false,
+      isFaceUp: json['isFaceUp'] as bool? ?? true,
       isJoker: json['isJoker'] as bool? ?? false,
       imageUrl: json['imageUrl'] as String?,
     );

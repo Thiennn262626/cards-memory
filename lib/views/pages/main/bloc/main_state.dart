@@ -11,5 +11,6 @@ class MainState with _$MainState {
     @Default([]) List<CardsEntity> historyCards,
     @Default([]) List<WarningEntity> dangerWarnings,
     @Default(false) bool picked,
+    @Default([]) List<CardEntity> selectedCards,
   }) = _MainState;
 }

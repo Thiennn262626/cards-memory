@@ -42,8 +42,10 @@ class AppColorScheme {
   static Color get kPrimary => const Color(0xffFC6011);
   static Color get primaryText => const Color(0xff4A4B4D);
   static Color get secondaryText => const Color(0xff7C7D7E);
-  static Color get textfield => const Color(0xffF2F2F2);
+  static Color get textField => const Color(0xffF2F2F2);
   static Color get placeholder => const Color(0xffB6B7B7);
+  static Color get bg => const Color(0xffc3a5b1);
+  static Color get header1 => const Color(0xff60425e);
+  static Color get header2 => const Color(0xfffed28b);
   static Color get white => const Color(0xffffffff);
-  static Color get bg => const Color(0xff94e5dc);
 }

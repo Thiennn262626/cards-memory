@@ -10,7 +10,7 @@ class CardEntity {
   final int value;
   final int indexRank;
   final int indexSuit;
-  final bool isFaceUp;
+  bool isFaceUp;
   final bool isJoker;
   final String? imageUrl;
 
@@ -22,10 +22,21 @@ class CardEntity {
     required this.value,
     required this.indexRank,
     required this.indexSuit,
-    this.isFaceUp = false,
+    this.isFaceUp = true,
     this.isJoker = false,
     this.imageUrl,
   });
+  CardEntity copyWith({bool? isFaceUp}) {
+    return CardEntity(
+      rank: rank,
+      suit: suit,
+      color: color,
+      value: value,
+      indexRank: indexRank,
+      indexSuit: indexSuit,
+      isFaceUp: isFaceUp ?? this.isFaceUp,
+    );
+  }
 
   // Factory method for initial card (can be used as a placeholder)
   factory CardEntity.initial() {

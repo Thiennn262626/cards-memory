@@ -10,4 +10,6 @@ class MainEvent with _$MainEvent {
   const factory MainEvent.sortMyCardsEvent(TypeSort? typeSort) =
       _SortMyCardsEvent;
   const factory MainEvent.playCardsEvent(bool? isMyCard) = _PlayCardsEvent;
+  const factory MainEvent.toggleSelectCardEvent(CardEntity card) =
+      _ToggleSelectCardEvent;
 }

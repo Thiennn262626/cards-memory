@@ -17,9 +17,11 @@ class CardsEntity {
     this.isSorted,
     this.typeSort,
   });
-
-  // Factory method khởi tạo với giá trị mặc định
-  // const factory CardsEntity.initial() = _InitialCardsEntity;
+  CardsEntity copyWith({List<CardEntity>? deck}) {
+    return CardsEntity(
+      deck: deck ?? this.deck,
+    );
+  }
 
   // Phương thức thực hiện việc khởi tạo CardsEntity
   const factory CardsEntity.initial() = CardsEntity;
@@ -82,7 +84,7 @@ class CardsEntity {
           value: ranks.indexOf(rank) + 3, // Giá trị bắt đầu từ 3
           indexRank: ranks.indexOf(rank),
           indexSuit: suits.indexOf(suit),
-          isFaceUp: false,
+          isFaceUp: true,
           isJoker: false,
           imageUrl: null,
         ));

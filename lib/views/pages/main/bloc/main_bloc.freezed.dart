@@ -23,6 +23,7 @@ mixin _$MainEvent {
     required TResult Function() pickMyCardsEvent,
     required TResult Function(TypeSort? typeSort) sortMyCardsEvent,
     required TResult Function(bool? isMyCard) playCardsEvent,
+    required TResult Function(CardEntity card) toggleSelectCardEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -32,6 +33,7 @@ mixin _$MainEvent {
     TResult? Function()? pickMyCardsEvent,
     TResult? Function(TypeSort? typeSort)? sortMyCardsEvent,
     TResult? Function(bool? isMyCard)? playCardsEvent,
+    TResult? Function(CardEntity card)? toggleSelectCardEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -41,6 +43,7 @@ mixin _$MainEvent {
     TResult Function()? pickMyCardsEvent,
     TResult Function(TypeSort? typeSort)? sortMyCardsEvent,
     TResult Function(bool? isMyCard)? playCardsEvent,
+    TResult Function(CardEntity card)? toggleSelectCardEvent,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -51,6 +54,8 @@ mixin _$MainEvent {
     required TResult Function(_PickMyCardsEvent value) pickMyCardsEvent,
     required TResult Function(_SortMyCardsEvent value) sortMyCardsEvent,
     required TResult Function(_PlayCardsEvent value) playCardsEvent,
+    required TResult Function(_ToggleSelectCardEvent value)
+        toggleSelectCardEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -60,6 +65,7 @@ mixin _$MainEvent {
     TResult? Function(_PickMyCardsEvent value)? pickMyCardsEvent,
     TResult? Function(_SortMyCardsEvent value)? sortMyCardsEvent,
     TResult? Function(_PlayCardsEvent value)? playCardsEvent,
+    TResult? Function(_ToggleSelectCardEvent value)? toggleSelectCardEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -69,6 +75,7 @@ mixin _$MainEvent {
     TResult Function(_PickMyCardsEvent value)? pickMyCardsEvent,
     TResult Function(_SortMyCardsEvent value)? sortMyCardsEvent,
     TResult Function(_PlayCardsEvent value)? playCardsEvent,
+    TResult Function(_ToggleSelectCardEvent value)? toggleSelectCardEvent,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -134,6 +141,7 @@ class _$MainInitialEventImpl extends _MainInitialEvent {
     required TResult Function() pickMyCardsEvent,
     required TResult Function(TypeSort? typeSort) sortMyCardsEvent,
     required TResult Function(bool? isMyCard) playCardsEvent,
+    required TResult Function(CardEntity card) toggleSelectCardEvent,
   }) {
     return initial();
   }
@@ -146,6 +154,7 @@ class _$MainInitialEventImpl extends _MainInitialEvent {
     TResult? Function()? pickMyCardsEvent,
     TResult? Function(TypeSort? typeSort)? sortMyCardsEvent,
     TResult? Function(bool? isMyCard)? playCardsEvent,
+    TResult? Function(CardEntity card)? toggleSelectCardEvent,
   }) {
     return initial?.call();
   }
@@ -158,6 +167,7 @@ class _$MainInitialEventImpl extends _MainInitialEvent {
     TResult Function()? pickMyCardsEvent,
     TResult Function(TypeSort? typeSort)? sortMyCardsEvent,
     TResult Function(bool? isMyCard)? playCardsEvent,
+    TResult Function(CardEntity card)? toggleSelectCardEvent,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -174,6 +184,8 @@ class _$MainInitialEventImpl extends _MainInitialEvent {
     required TResult Function(_PickMyCardsEvent value) pickMyCardsEvent,
     required TResult Function(_SortMyCardsEvent value) sortMyCardsEvent,
     required TResult Function(_PlayCardsEvent value) playCardsEvent,
+    required TResult Function(_ToggleSelectCardEvent value)
+        toggleSelectCardEvent,
   }) {
     return initial(this);
   }
@@ -186,6 +198,7 @@ class _$MainInitialEventImpl extends _MainInitialEvent {
     TResult? Function(_PickMyCardsEvent value)? pickMyCardsEvent,
     TResult? Function(_SortMyCardsEvent value)? sortMyCardsEvent,
     TResult? Function(_PlayCardsEvent value)? playCardsEvent,
+    TResult? Function(_ToggleSelectCardEvent value)? toggleSelectCardEvent,
   }) {
     return initial?.call(this);
   }
@@ -198,6 +211,7 @@ class _$MainInitialEventImpl extends _MainInitialEvent {
     TResult Function(_PickMyCardsEvent value)? pickMyCardsEvent,
     TResult Function(_SortMyCardsEvent value)? sortMyCardsEvent,
     TResult Function(_PlayCardsEvent value)? playCardsEvent,
+    TResult Function(_ToggleSelectCardEvent value)? toggleSelectCardEvent,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -255,6 +269,7 @@ class _$LoadCardsEventImpl extends _LoadCardsEvent {
     required TResult Function() pickMyCardsEvent,
     required TResult Function(TypeSort? typeSort) sortMyCardsEvent,
     required TResult Function(bool? isMyCard) playCardsEvent,
+    required TResult Function(CardEntity card) toggleSelectCardEvent,
   }) {
     return loadCardsEvent();
   }
@@ -267,6 +282,7 @@ class _$LoadCardsEventImpl extends _LoadCardsEvent {
     TResult? Function()? pickMyCardsEvent,
     TResult? Function(TypeSort? typeSort)? sortMyCardsEvent,
     TResult? Function(bool? isMyCard)? playCardsEvent,
+    TResult? Function(CardEntity card)? toggleSelectCardEvent,
   }) {
     return loadCardsEvent?.call();
   }
@@ -279,6 +295,7 @@ class _$LoadCardsEventImpl extends _LoadCardsEvent {
     TResult Function()? pickMyCardsEvent,
     TResult Function(TypeSort? typeSort)? sortMyCardsEvent,
     TResult Function(bool? isMyCard)? playCardsEvent,
+    TResult Function(CardEntity card)? toggleSelectCardEvent,
     required TResult orElse(),
   }) {
     if (loadCardsEvent != null) {
@@ -295,6 +312,8 @@ class _$LoadCardsEventImpl extends _LoadCardsEvent {
     required TResult Function(_PickMyCardsEvent value) pickMyCardsEvent,
     required TResult Function(_SortMyCardsEvent value) sortMyCardsEvent,
     required TResult Function(_PlayCardsEvent value) playCardsEvent,
+    required TResult Function(_ToggleSelectCardEvent value)
+        toggleSelectCardEvent,
   }) {
     return loadCardsEvent(this);
   }
@@ -307,6 +326,7 @@ class _$LoadCardsEventImpl extends _LoadCardsEvent {
     TResult? Function(_PickMyCardsEvent value)? pickMyCardsEvent,
     TResult? Function(_SortMyCardsEvent value)? sortMyCardsEvent,
     TResult? Function(_PlayCardsEvent value)? playCardsEvent,
+    TResult? Function(_ToggleSelectCardEvent value)? toggleSelectCardEvent,
   }) {
     return loadCardsEvent?.call(this);
   }
@@ -319,6 +339,7 @@ class _$LoadCardsEventImpl extends _LoadCardsEvent {
     TResult Function(_PickMyCardsEvent value)? pickMyCardsEvent,
     TResult Function(_SortMyCardsEvent value)? sortMyCardsEvent,
     TResult Function(_PlayCardsEvent value)? playCardsEvent,
+    TResult Function(_ToggleSelectCardEvent value)? toggleSelectCardEvent,
     required TResult orElse(),
   }) {
     if (loadCardsEvent != null) {
@@ -376,6 +397,7 @@ class _$PickMyCardsEventImpl extends _PickMyCardsEvent {
     required TResult Function() pickMyCardsEvent,
     required TResult Function(TypeSort? typeSort) sortMyCardsEvent,
     required TResult Function(bool? isMyCard) playCardsEvent,
+    required TResult Function(CardEntity card) toggleSelectCardEvent,
   }) {
     return pickMyCardsEvent();
   }
@@ -388,6 +410,7 @@ class _$PickMyCardsEventImpl extends _PickMyCardsEvent {
     TResult? Function()? pickMyCardsEvent,
     TResult? Function(TypeSort? typeSort)? sortMyCardsEvent,
     TResult? Function(bool? isMyCard)? playCardsEvent,
+    TResult? Function(CardEntity card)? toggleSelectCardEvent,
   }) {
     return pickMyCardsEvent?.call();
   }
@@ -400,6 +423,7 @@ class _$PickMyCardsEventImpl extends _PickMyCardsEvent {
     TResult Function()? pickMyCardsEvent,
     TResult Function(TypeSort? typeSort)? sortMyCardsEvent,
     TResult Function(bool? isMyCard)? playCardsEvent,
+    TResult Function(CardEntity card)? toggleSelectCardEvent,
     required TResult orElse(),
   }) {
     if (pickMyCardsEvent != null) {
@@ -416,6 +440,8 @@ class _$PickMyCardsEventImpl extends _PickMyCardsEvent {
     required TResult Function(_PickMyCardsEvent value) pickMyCardsEvent,
     required TResult Function(_SortMyCardsEvent value) sortMyCardsEvent,
     required TResult Function(_PlayCardsEvent value) playCardsEvent,
+    required TResult Function(_ToggleSelectCardEvent value)
+        toggleSelectCardEvent,
   }) {
     return pickMyCardsEvent(this);
   }
@@ -428,6 +454,7 @@ class _$PickMyCardsEventImpl extends _PickMyCardsEvent {
     TResult? Function(_PickMyCardsEvent value)? pickMyCardsEvent,
     TResult? Function(_SortMyCardsEvent value)? sortMyCardsEvent,
     TResult? Function(_PlayCardsEvent value)? playCardsEvent,
+    TResult? Function(_ToggleSelectCardEvent value)? toggleSelectCardEvent,
   }) {
     return pickMyCardsEvent?.call(this);
   }
@@ -440,6 +467,7 @@ class _$PickMyCardsEventImpl extends _PickMyCardsEvent {
     TResult Function(_PickMyCardsEvent value)? pickMyCardsEvent,
     TResult Function(_SortMyCardsEvent value)? sortMyCardsEvent,
     TResult Function(_PlayCardsEvent value)? playCardsEvent,
+    TResult Function(_ToggleSelectCardEvent value)? toggleSelectCardEvent,
     required TResult orElse(),
   }) {
     if (pickMyCardsEvent != null) {
@@ -525,6 +553,7 @@ class _$SortMyCardsEventImpl extends _SortMyCardsEvent {
     required TResult Function() pickMyCardsEvent,
     required TResult Function(TypeSort? typeSort) sortMyCardsEvent,
     required TResult Function(bool? isMyCard) playCardsEvent,
+    required TResult Function(CardEntity card) toggleSelectCardEvent,
   }) {
     return sortMyCardsEvent(typeSort);
   }
@@ -537,6 +566,7 @@ class _$SortMyCardsEventImpl extends _SortMyCardsEvent {
     TResult? Function()? pickMyCardsEvent,
     TResult? Function(TypeSort? typeSort)? sortMyCardsEvent,
     TResult? Function(bool? isMyCard)? playCardsEvent,
+    TResult? Function(CardEntity card)? toggleSelectCardEvent,
   }) {
     return sortMyCardsEvent?.call(typeSort);
   }
@@ -549,6 +579,7 @@ class _$SortMyCardsEventImpl extends _SortMyCardsEvent {
     TResult Function()? pickMyCardsEvent,
     TResult Function(TypeSort? typeSort)? sortMyCardsEvent,
     TResult Function(bool? isMyCard)? playCardsEvent,
+    TResult Function(CardEntity card)? toggleSelectCardEvent,
     required TResult orElse(),
   }) {
     if (sortMyCardsEvent != null) {
@@ -565,6 +596,8 @@ class _$SortMyCardsEventImpl extends _SortMyCardsEvent {
     required TResult Function(_PickMyCardsEvent value) pickMyCardsEvent,
     required TResult Function(_SortMyCardsEvent value) sortMyCardsEvent,
     required TResult Function(_PlayCardsEvent value) playCardsEvent,
+    required TResult Function(_ToggleSelectCardEvent value)
+        toggleSelectCardEvent,
   }) {
     return sortMyCardsEvent(this);
   }
@@ -577,6 +610,7 @@ class _$SortMyCardsEventImpl extends _SortMyCardsEvent {
     TResult? Function(_PickMyCardsEvent value)? pickMyCardsEvent,
     TResult? Function(_SortMyCardsEvent value)? sortMyCardsEvent,
     TResult? Function(_PlayCardsEvent value)? playCardsEvent,
+    TResult? Function(_ToggleSelectCardEvent value)? toggleSelectCardEvent,
   }) {
     return sortMyCardsEvent?.call(this);
   }
@@ -589,6 +623,7 @@ class _$SortMyCardsEventImpl extends _SortMyCardsEvent {
     TResult Function(_PickMyCardsEvent value)? pickMyCardsEvent,
     TResult Function(_SortMyCardsEvent value)? sortMyCardsEvent,
     TResult Function(_PlayCardsEvent value)? playCardsEvent,
+    TResult Function(_ToggleSelectCardEvent value)? toggleSelectCardEvent,
     required TResult orElse(),
   }) {
     if (sortMyCardsEvent != null) {
@@ -680,6 +715,7 @@ class _$PlayCardsEventImpl extends _PlayCardsEvent {
     required TResult Function() pickMyCardsEvent,
     required TResult Function(TypeSort? typeSort) sortMyCardsEvent,
     required TResult Function(bool? isMyCard) playCardsEvent,
+    required TResult Function(CardEntity card) toggleSelectCardEvent,
   }) {
     return playCardsEvent(isMyCard);
   }
@@ -692,6 +728,7 @@ class _$PlayCardsEventImpl extends _PlayCardsEvent {
     TResult? Function()? pickMyCardsEvent,
     TResult? Function(TypeSort? typeSort)? sortMyCardsEvent,
     TResult? Function(bool? isMyCard)? playCardsEvent,
+    TResult? Function(CardEntity card)? toggleSelectCardEvent,
   }) {
     return playCardsEvent?.call(isMyCard);
   }
@@ -704,6 +741,7 @@ class _$PlayCardsEventImpl extends _PlayCardsEvent {
     TResult Function()? pickMyCardsEvent,
     TResult Function(TypeSort? typeSort)? sortMyCardsEvent,
     TResult Function(bool? isMyCard)? playCardsEvent,
+    TResult Function(CardEntity card)? toggleSelectCardEvent,
     required TResult orElse(),
   }) {
     if (playCardsEvent != null) {
@@ -720,6 +758,8 @@ class _$PlayCardsEventImpl extends _PlayCardsEvent {
     required TResult Function(_PickMyCardsEvent value) pickMyCardsEvent,
     required TResult Function(_SortMyCardsEvent value) sortMyCardsEvent,
     required TResult Function(_PlayCardsEvent value) playCardsEvent,
+    required TResult Function(_ToggleSelectCardEvent value)
+        toggleSelectCardEvent,
   }) {
     return playCardsEvent(this);
   }
@@ -732,6 +772,7 @@ class _$PlayCardsEventImpl extends _PlayCardsEvent {
     TResult? Function(_PickMyCardsEvent value)? pickMyCardsEvent,
     TResult? Function(_SortMyCardsEvent value)? sortMyCardsEvent,
     TResult? Function(_PlayCardsEvent value)? playCardsEvent,
+    TResult? Function(_ToggleSelectCardEvent value)? toggleSelectCardEvent,
   }) {
     return playCardsEvent?.call(this);
   }
@@ -744,6 +785,7 @@ class _$PlayCardsEventImpl extends _PlayCardsEvent {
     TResult Function(_PickMyCardsEvent value)? pickMyCardsEvent,
     TResult Function(_SortMyCardsEvent value)? sortMyCardsEvent,
     TResult Function(_PlayCardsEvent value)? playCardsEvent,
+    TResult Function(_ToggleSelectCardEvent value)? toggleSelectCardEvent,
     required TResult orElse(),
   }) {
     if (playCardsEvent != null) {
@@ -764,6 +806,168 @@ abstract class _PlayCardsEvent extends MainEvent {
 }
 
 /// @nodoc
+abstract class _$$ToggleSelectCardEventImplCopyWith<$Res> {
+  factory _$$ToggleSelectCardEventImplCopyWith(
+          _$ToggleSelectCardEventImpl value,
+          $Res Function(_$ToggleSelectCardEventImpl) then) =
+      __$$ToggleSelectCardEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({CardEntity card});
+}
+
+/// @nodoc
+class __$$ToggleSelectCardEventImplCopyWithImpl<$Res>
+    extends _$MainEventCopyWithImpl<$Res, _$ToggleSelectCardEventImpl>
+    implements _$$ToggleSelectCardEventImplCopyWith<$Res> {
+  __$$ToggleSelectCardEventImplCopyWithImpl(_$ToggleSelectCardEventImpl _value,
+      $Res Function(_$ToggleSelectCardEventImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? card = null,
+  }) {
+    return _then(_$ToggleSelectCardEventImpl(
+      null == card
+          ? _value.card
+          : card // ignore: cast_nullable_to_non_nullable
+              as CardEntity,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ToggleSelectCardEventImpl extends _ToggleSelectCardEvent {
+  const _$ToggleSelectCardEventImpl(this.card) : super._();
+
+  @override
+  final CardEntity card;
+
+  @override
+  String toString() {
+    return 'MainEvent.toggleSelectCardEvent(card: $card)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ToggleSelectCardEventImpl &&
+            (identical(other.card, card) || other.card == card));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, card);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ToggleSelectCardEventImplCopyWith<_$ToggleSelectCardEventImpl>
+      get copyWith => __$$ToggleSelectCardEventImplCopyWithImpl<
+          _$ToggleSelectCardEventImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadCardsEvent,
+    required TResult Function() pickMyCardsEvent,
+    required TResult Function(TypeSort? typeSort) sortMyCardsEvent,
+    required TResult Function(bool? isMyCard) playCardsEvent,
+    required TResult Function(CardEntity card) toggleSelectCardEvent,
+  }) {
+    return toggleSelectCardEvent(card);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadCardsEvent,
+    TResult? Function()? pickMyCardsEvent,
+    TResult? Function(TypeSort? typeSort)? sortMyCardsEvent,
+    TResult? Function(bool? isMyCard)? playCardsEvent,
+    TResult? Function(CardEntity card)? toggleSelectCardEvent,
+  }) {
+    return toggleSelectCardEvent?.call(card);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadCardsEvent,
+    TResult Function()? pickMyCardsEvent,
+    TResult Function(TypeSort? typeSort)? sortMyCardsEvent,
+    TResult Function(bool? isMyCard)? playCardsEvent,
+    TResult Function(CardEntity card)? toggleSelectCardEvent,
+    required TResult orElse(),
+  }) {
+    if (toggleSelectCardEvent != null) {
+      return toggleSelectCardEvent(card);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_MainInitialEvent value) initial,
+    required TResult Function(_LoadCardsEvent value) loadCardsEvent,
+    required TResult Function(_PickMyCardsEvent value) pickMyCardsEvent,
+    required TResult Function(_SortMyCardsEvent value) sortMyCardsEvent,
+    required TResult Function(_PlayCardsEvent value) playCardsEvent,
+    required TResult Function(_ToggleSelectCardEvent value)
+        toggleSelectCardEvent,
+  }) {
+    return toggleSelectCardEvent(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_MainInitialEvent value)? initial,
+    TResult? Function(_LoadCardsEvent value)? loadCardsEvent,
+    TResult? Function(_PickMyCardsEvent value)? pickMyCardsEvent,
+    TResult? Function(_SortMyCardsEvent value)? sortMyCardsEvent,
+    TResult? Function(_PlayCardsEvent value)? playCardsEvent,
+    TResult? Function(_ToggleSelectCardEvent value)? toggleSelectCardEvent,
+  }) {
+    return toggleSelectCardEvent?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_MainInitialEvent value)? initial,
+    TResult Function(_LoadCardsEvent value)? loadCardsEvent,
+    TResult Function(_PickMyCardsEvent value)? pickMyCardsEvent,
+    TResult Function(_SortMyCardsEvent value)? sortMyCardsEvent,
+    TResult Function(_PlayCardsEvent value)? playCardsEvent,
+    TResult Function(_ToggleSelectCardEvent value)? toggleSelectCardEvent,
+    required TResult orElse(),
+  }) {
+    if (toggleSelectCardEvent != null) {
+      return toggleSelectCardEvent(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ToggleSelectCardEvent extends MainEvent {
+  const factory _ToggleSelectCardEvent(final CardEntity card) =
+      _$ToggleSelectCardEventImpl;
+  const _ToggleSelectCardEvent._() : super._();
+
+  CardEntity get card;
+  @JsonKey(ignore: true)
+  _$$ToggleSelectCardEventImplCopyWith<_$ToggleSelectCardEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$MainState {
   ApiStatus get loading => throw _privateConstructorUsedError;
   CardsEntity get cardList => throw _privateConstructorUsedError;
@@ -771,6 +975,7 @@ mixin _$MainState {
   List<CardsEntity> get historyCards => throw _privateConstructorUsedError;
   List<WarningEntity> get dangerWarnings => throw _privateConstructorUsedError;
   bool get picked => throw _privateConstructorUsedError;
+  List<CardEntity> get selectedCards => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $MainStateCopyWith<MainState> get copyWith =>
@@ -788,7 +993,8 @@ abstract class $MainStateCopyWith<$Res> {
       CardsEntity myCards,
       List<CardsEntity> historyCards,
       List<WarningEntity> dangerWarnings,
-      bool picked});
+      bool picked,
+      List<CardEntity> selectedCards});
 
   $ApiStatusCopyWith<$Res> get loading;
 }
@@ -812,6 +1018,7 @@ class _$MainStateCopyWithImpl<$Res, $Val extends MainState>
     Object? historyCards = null,
     Object? dangerWarnings = null,
     Object? picked = null,
+    Object? selectedCards = null,
   }) {
     return _then(_value.copyWith(
       loading: null == loading
@@ -838,6 +1045,10 @@ class _$MainStateCopyWithImpl<$Res, $Val extends MainState>
           ? _value.picked
           : picked // ignore: cast_nullable_to_non_nullable
               as bool,
+      selectedCards: null == selectedCards
+          ? _value.selectedCards
+          : selectedCards // ignore: cast_nullable_to_non_nullable
+              as List<CardEntity>,
     ) as $Val);
   }
 
@@ -864,7 +1075,8 @@ abstract class _$$MainStateImplCopyWith<$Res>
       CardsEntity myCards,
       List<CardsEntity> historyCards,
       List<WarningEntity> dangerWarnings,
-      bool picked});
+      bool picked,
+      List<CardEntity> selectedCards});
 
   @override
   $ApiStatusCopyWith<$Res> get loading;
@@ -887,6 +1099,7 @@ class __$$MainStateImplCopyWithImpl<$Res>
     Object? historyCards = null,
     Object? dangerWarnings = null,
     Object? picked = null,
+    Object? selectedCards = null,
   }) {
     return _then(_$MainStateImpl(
       loading: null == loading
@@ -913,6 +1126,10 @@ class __$$MainStateImplCopyWithImpl<$Res>
           ? _value.picked
           : picked // ignore: cast_nullable_to_non_nullable
               as bool,
+      selectedCards: null == selectedCards
+          ? _value._selectedCards
+          : selectedCards // ignore: cast_nullable_to_non_nullable
+              as List<CardEntity>,
     ));
   }
 }
@@ -926,9 +1143,11 @@ class _$MainStateImpl extends _MainState {
       this.myCards = const CardsEntity.initial(),
       final List<CardsEntity> historyCards = const [],
       final List<WarningEntity> dangerWarnings = const [],
-      this.picked = false})
+      this.picked = false,
+      final List<CardEntity> selectedCards = const []})
       : _historyCards = historyCards,
         _dangerWarnings = dangerWarnings,
+        _selectedCards = selectedCards,
         super._();
 
   @override
@@ -961,10 +1180,18 @@ class _$MainStateImpl extends _MainState {
   @override
   @JsonKey()
   final bool picked;
+  final List<CardEntity> _selectedCards;
+  @override
+  @JsonKey()
+  List<CardEntity> get selectedCards {
+    if (_selectedCards is EqualUnmodifiableListView) return _selectedCards;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_selectedCards);
+  }
 
   @override
   String toString() {
-    return 'MainState(loading: $loading, cardList: $cardList, myCards: $myCards, historyCards: $historyCards, dangerWarnings: $dangerWarnings, picked: $picked)';
+    return 'MainState(loading: $loading, cardList: $cardList, myCards: $myCards, historyCards: $historyCards, dangerWarnings: $dangerWarnings, picked: $picked, selectedCards: $selectedCards)';
   }
 
   @override
@@ -980,7 +1207,9 @@ class _$MainStateImpl extends _MainState {
                 .equals(other._historyCards, _historyCards) &&
             const DeepCollectionEquality()
                 .equals(other._dangerWarnings, _dangerWarnings) &&
-            (identical(other.picked, picked) || other.picked == picked));
+            (identical(other.picked, picked) || other.picked == picked) &&
+            const DeepCollectionEquality()
+                .equals(other._selectedCards, _selectedCards));
   }
 
   @override
@@ -991,7 +1220,8 @@ class _$MainStateImpl extends _MainState {
       myCards,
       const DeepCollectionEquality().hash(_historyCards),
       const DeepCollectionEquality().hash(_dangerWarnings),
-      picked);
+      picked,
+      const DeepCollectionEquality().hash(_selectedCards));
 
   @JsonKey(ignore: true)
   @override
@@ -1007,7 +1237,8 @@ abstract class _MainState extends MainState {
       final CardsEntity myCards,
       final List<CardsEntity> historyCards,
       final List<WarningEntity> dangerWarnings,
-      final bool picked}) = _$MainStateImpl;
+      final bool picked,
+      final List<CardEntity> selectedCards}) = _$MainStateImpl;
   const _MainState._() : super._();
 
   @override
@@ -1022,6 +1253,8 @@ abstract class _MainState extends MainState {
   List<WarningEntity> get dangerWarnings;
   @override
   bool get picked;
+  @override
+  List<CardEntity> get selectedCards;
   @override
   @JsonKey(ignore: true)
   _$$MainStateImplCopyWith<_$MainStateImpl> get copyWith =>
