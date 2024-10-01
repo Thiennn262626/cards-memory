@@ -21,7 +21,8 @@ mixin _$MainEvent {
     required TResult Function() initial,
     required TResult Function() loadCardsEvent,
     required TResult Function() pickMyCardsEvent,
-    required TResult Function(TypeSort? typeSort) sortMyCardsEvent,
+    required TResult Function() removeSelectCardEvent,
+    required TResult Function() sortMyCardsEvent,
     required TResult Function(bool? isMyCard) playCardsEvent,
     required TResult Function(CardEntity card) toggleSelectCardEvent,
   }) =>
@@ -31,7 +32,8 @@ mixin _$MainEvent {
     TResult? Function()? initial,
     TResult? Function()? loadCardsEvent,
     TResult? Function()? pickMyCardsEvent,
-    TResult? Function(TypeSort? typeSort)? sortMyCardsEvent,
+    TResult? Function()? removeSelectCardEvent,
+    TResult? Function()? sortMyCardsEvent,
     TResult? Function(bool? isMyCard)? playCardsEvent,
     TResult? Function(CardEntity card)? toggleSelectCardEvent,
   }) =>
@@ -41,7 +43,8 @@ mixin _$MainEvent {
     TResult Function()? initial,
     TResult Function()? loadCardsEvent,
     TResult Function()? pickMyCardsEvent,
-    TResult Function(TypeSort? typeSort)? sortMyCardsEvent,
+    TResult Function()? removeSelectCardEvent,
+    TResult Function()? sortMyCardsEvent,
     TResult Function(bool? isMyCard)? playCardsEvent,
     TResult Function(CardEntity card)? toggleSelectCardEvent,
     required TResult orElse(),
@@ -52,6 +55,8 @@ mixin _$MainEvent {
     required TResult Function(_MainInitialEvent value) initial,
     required TResult Function(_LoadCardsEvent value) loadCardsEvent,
     required TResult Function(_PickMyCardsEvent value) pickMyCardsEvent,
+    required TResult Function(_RemoveSelectCardEvent value)
+        removeSelectCardEvent,
     required TResult Function(_SortMyCardsEvent value) sortMyCardsEvent,
     required TResult Function(_PlayCardsEvent value) playCardsEvent,
     required TResult Function(_ToggleSelectCardEvent value)
@@ -63,6 +68,7 @@ mixin _$MainEvent {
     TResult? Function(_MainInitialEvent value)? initial,
     TResult? Function(_LoadCardsEvent value)? loadCardsEvent,
     TResult? Function(_PickMyCardsEvent value)? pickMyCardsEvent,
+    TResult? Function(_RemoveSelectCardEvent value)? removeSelectCardEvent,
     TResult? Function(_SortMyCardsEvent value)? sortMyCardsEvent,
     TResult? Function(_PlayCardsEvent value)? playCardsEvent,
     TResult? Function(_ToggleSelectCardEvent value)? toggleSelectCardEvent,
@@ -73,6 +79,7 @@ mixin _$MainEvent {
     TResult Function(_MainInitialEvent value)? initial,
     TResult Function(_LoadCardsEvent value)? loadCardsEvent,
     TResult Function(_PickMyCardsEvent value)? pickMyCardsEvent,
+    TResult Function(_RemoveSelectCardEvent value)? removeSelectCardEvent,
     TResult Function(_SortMyCardsEvent value)? sortMyCardsEvent,
     TResult Function(_PlayCardsEvent value)? playCardsEvent,
     TResult Function(_ToggleSelectCardEvent value)? toggleSelectCardEvent,
@@ -139,7 +146,8 @@ class _$MainInitialEventImpl extends _MainInitialEvent {
     required TResult Function() initial,
     required TResult Function() loadCardsEvent,
     required TResult Function() pickMyCardsEvent,
-    required TResult Function(TypeSort? typeSort) sortMyCardsEvent,
+    required TResult Function() removeSelectCardEvent,
+    required TResult Function() sortMyCardsEvent,
     required TResult Function(bool? isMyCard) playCardsEvent,
     required TResult Function(CardEntity card) toggleSelectCardEvent,
   }) {
@@ -152,7 +160,8 @@ class _$MainInitialEventImpl extends _MainInitialEvent {
     TResult? Function()? initial,
     TResult? Function()? loadCardsEvent,
     TResult? Function()? pickMyCardsEvent,
-    TResult? Function(TypeSort? typeSort)? sortMyCardsEvent,
+    TResult? Function()? removeSelectCardEvent,
+    TResult? Function()? sortMyCardsEvent,
     TResult? Function(bool? isMyCard)? playCardsEvent,
     TResult? Function(CardEntity card)? toggleSelectCardEvent,
   }) {
@@ -165,7 +174,8 @@ class _$MainInitialEventImpl extends _MainInitialEvent {
     TResult Function()? initial,
     TResult Function()? loadCardsEvent,
     TResult Function()? pickMyCardsEvent,
-    TResult Function(TypeSort? typeSort)? sortMyCardsEvent,
+    TResult Function()? removeSelectCardEvent,
+    TResult Function()? sortMyCardsEvent,
     TResult Function(bool? isMyCard)? playCardsEvent,
     TResult Function(CardEntity card)? toggleSelectCardEvent,
     required TResult orElse(),
@@ -182,6 +192,8 @@ class _$MainInitialEventImpl extends _MainInitialEvent {
     required TResult Function(_MainInitialEvent value) initial,
     required TResult Function(_LoadCardsEvent value) loadCardsEvent,
     required TResult Function(_PickMyCardsEvent value) pickMyCardsEvent,
+    required TResult Function(_RemoveSelectCardEvent value)
+        removeSelectCardEvent,
     required TResult Function(_SortMyCardsEvent value) sortMyCardsEvent,
     required TResult Function(_PlayCardsEvent value) playCardsEvent,
     required TResult Function(_ToggleSelectCardEvent value)
@@ -196,6 +208,7 @@ class _$MainInitialEventImpl extends _MainInitialEvent {
     TResult? Function(_MainInitialEvent value)? initial,
     TResult? Function(_LoadCardsEvent value)? loadCardsEvent,
     TResult? Function(_PickMyCardsEvent value)? pickMyCardsEvent,
+    TResult? Function(_RemoveSelectCardEvent value)? removeSelectCardEvent,
     TResult? Function(_SortMyCardsEvent value)? sortMyCardsEvent,
     TResult? Function(_PlayCardsEvent value)? playCardsEvent,
     TResult? Function(_ToggleSelectCardEvent value)? toggleSelectCardEvent,
@@ -209,6 +222,7 @@ class _$MainInitialEventImpl extends _MainInitialEvent {
     TResult Function(_MainInitialEvent value)? initial,
     TResult Function(_LoadCardsEvent value)? loadCardsEvent,
     TResult Function(_PickMyCardsEvent value)? pickMyCardsEvent,
+    TResult Function(_RemoveSelectCardEvent value)? removeSelectCardEvent,
     TResult Function(_SortMyCardsEvent value)? sortMyCardsEvent,
     TResult Function(_PlayCardsEvent value)? playCardsEvent,
     TResult Function(_ToggleSelectCardEvent value)? toggleSelectCardEvent,
@@ -267,7 +281,8 @@ class _$LoadCardsEventImpl extends _LoadCardsEvent {
     required TResult Function() initial,
     required TResult Function() loadCardsEvent,
     required TResult Function() pickMyCardsEvent,
-    required TResult Function(TypeSort? typeSort) sortMyCardsEvent,
+    required TResult Function() removeSelectCardEvent,
+    required TResult Function() sortMyCardsEvent,
     required TResult Function(bool? isMyCard) playCardsEvent,
     required TResult Function(CardEntity card) toggleSelectCardEvent,
   }) {
@@ -280,7 +295,8 @@ class _$LoadCardsEventImpl extends _LoadCardsEvent {
     TResult? Function()? initial,
     TResult? Function()? loadCardsEvent,
     TResult? Function()? pickMyCardsEvent,
-    TResult? Function(TypeSort? typeSort)? sortMyCardsEvent,
+    TResult? Function()? removeSelectCardEvent,
+    TResult? Function()? sortMyCardsEvent,
     TResult? Function(bool? isMyCard)? playCardsEvent,
     TResult? Function(CardEntity card)? toggleSelectCardEvent,
   }) {
@@ -293,7 +309,8 @@ class _$LoadCardsEventImpl extends _LoadCardsEvent {
     TResult Function()? initial,
     TResult Function()? loadCardsEvent,
     TResult Function()? pickMyCardsEvent,
-    TResult Function(TypeSort? typeSort)? sortMyCardsEvent,
+    TResult Function()? removeSelectCardEvent,
+    TResult Function()? sortMyCardsEvent,
     TResult Function(bool? isMyCard)? playCardsEvent,
     TResult Function(CardEntity card)? toggleSelectCardEvent,
     required TResult orElse(),
@@ -310,6 +327,8 @@ class _$LoadCardsEventImpl extends _LoadCardsEvent {
     required TResult Function(_MainInitialEvent value) initial,
     required TResult Function(_LoadCardsEvent value) loadCardsEvent,
     required TResult Function(_PickMyCardsEvent value) pickMyCardsEvent,
+    required TResult Function(_RemoveSelectCardEvent value)
+        removeSelectCardEvent,
     required TResult Function(_SortMyCardsEvent value) sortMyCardsEvent,
     required TResult Function(_PlayCardsEvent value) playCardsEvent,
     required TResult Function(_ToggleSelectCardEvent value)
@@ -324,6 +343,7 @@ class _$LoadCardsEventImpl extends _LoadCardsEvent {
     TResult? Function(_MainInitialEvent value)? initial,
     TResult? Function(_LoadCardsEvent value)? loadCardsEvent,
     TResult? Function(_PickMyCardsEvent value)? pickMyCardsEvent,
+    TResult? Function(_RemoveSelectCardEvent value)? removeSelectCardEvent,
     TResult? Function(_SortMyCardsEvent value)? sortMyCardsEvent,
     TResult? Function(_PlayCardsEvent value)? playCardsEvent,
     TResult? Function(_ToggleSelectCardEvent value)? toggleSelectCardEvent,
@@ -337,6 +357,7 @@ class _$LoadCardsEventImpl extends _LoadCardsEvent {
     TResult Function(_MainInitialEvent value)? initial,
     TResult Function(_LoadCardsEvent value)? loadCardsEvent,
     TResult Function(_PickMyCardsEvent value)? pickMyCardsEvent,
+    TResult Function(_RemoveSelectCardEvent value)? removeSelectCardEvent,
     TResult Function(_SortMyCardsEvent value)? sortMyCardsEvent,
     TResult Function(_PlayCardsEvent value)? playCardsEvent,
     TResult Function(_ToggleSelectCardEvent value)? toggleSelectCardEvent,
@@ -395,7 +416,8 @@ class _$PickMyCardsEventImpl extends _PickMyCardsEvent {
     required TResult Function() initial,
     required TResult Function() loadCardsEvent,
     required TResult Function() pickMyCardsEvent,
-    required TResult Function(TypeSort? typeSort) sortMyCardsEvent,
+    required TResult Function() removeSelectCardEvent,
+    required TResult Function() sortMyCardsEvent,
     required TResult Function(bool? isMyCard) playCardsEvent,
     required TResult Function(CardEntity card) toggleSelectCardEvent,
   }) {
@@ -408,7 +430,8 @@ class _$PickMyCardsEventImpl extends _PickMyCardsEvent {
     TResult? Function()? initial,
     TResult? Function()? loadCardsEvent,
     TResult? Function()? pickMyCardsEvent,
-    TResult? Function(TypeSort? typeSort)? sortMyCardsEvent,
+    TResult? Function()? removeSelectCardEvent,
+    TResult? Function()? sortMyCardsEvent,
     TResult? Function(bool? isMyCard)? playCardsEvent,
     TResult? Function(CardEntity card)? toggleSelectCardEvent,
   }) {
@@ -421,7 +444,8 @@ class _$PickMyCardsEventImpl extends _PickMyCardsEvent {
     TResult Function()? initial,
     TResult Function()? loadCardsEvent,
     TResult Function()? pickMyCardsEvent,
-    TResult Function(TypeSort? typeSort)? sortMyCardsEvent,
+    TResult Function()? removeSelectCardEvent,
+    TResult Function()? sortMyCardsEvent,
     TResult Function(bool? isMyCard)? playCardsEvent,
     TResult Function(CardEntity card)? toggleSelectCardEvent,
     required TResult orElse(),
@@ -438,6 +462,8 @@ class _$PickMyCardsEventImpl extends _PickMyCardsEvent {
     required TResult Function(_MainInitialEvent value) initial,
     required TResult Function(_LoadCardsEvent value) loadCardsEvent,
     required TResult Function(_PickMyCardsEvent value) pickMyCardsEvent,
+    required TResult Function(_RemoveSelectCardEvent value)
+        removeSelectCardEvent,
     required TResult Function(_SortMyCardsEvent value) sortMyCardsEvent,
     required TResult Function(_PlayCardsEvent value) playCardsEvent,
     required TResult Function(_ToggleSelectCardEvent value)
@@ -452,6 +478,7 @@ class _$PickMyCardsEventImpl extends _PickMyCardsEvent {
     TResult? Function(_MainInitialEvent value)? initial,
     TResult? Function(_LoadCardsEvent value)? loadCardsEvent,
     TResult? Function(_PickMyCardsEvent value)? pickMyCardsEvent,
+    TResult? Function(_RemoveSelectCardEvent value)? removeSelectCardEvent,
     TResult? Function(_SortMyCardsEvent value)? sortMyCardsEvent,
     TResult? Function(_PlayCardsEvent value)? playCardsEvent,
     TResult? Function(_ToggleSelectCardEvent value)? toggleSelectCardEvent,
@@ -465,6 +492,7 @@ class _$PickMyCardsEventImpl extends _PickMyCardsEvent {
     TResult Function(_MainInitialEvent value)? initial,
     TResult Function(_LoadCardsEvent value)? loadCardsEvent,
     TResult Function(_PickMyCardsEvent value)? pickMyCardsEvent,
+    TResult Function(_RemoveSelectCardEvent value)? removeSelectCardEvent,
     TResult Function(_SortMyCardsEvent value)? sortMyCardsEvent,
     TResult Function(_PlayCardsEvent value)? playCardsEvent,
     TResult Function(_ToggleSelectCardEvent value)? toggleSelectCardEvent,
@@ -483,67 +511,41 @@ abstract class _PickMyCardsEvent extends MainEvent {
 }
 
 /// @nodoc
-abstract class _$$SortMyCardsEventImplCopyWith<$Res> {
-  factory _$$SortMyCardsEventImplCopyWith(_$SortMyCardsEventImpl value,
-          $Res Function(_$SortMyCardsEventImpl) then) =
-      __$$SortMyCardsEventImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({TypeSort? typeSort});
+abstract class _$$RemoveSelectCardEventImplCopyWith<$Res> {
+  factory _$$RemoveSelectCardEventImplCopyWith(
+          _$RemoveSelectCardEventImpl value,
+          $Res Function(_$RemoveSelectCardEventImpl) then) =
+      __$$RemoveSelectCardEventImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$SortMyCardsEventImplCopyWithImpl<$Res>
-    extends _$MainEventCopyWithImpl<$Res, _$SortMyCardsEventImpl>
-    implements _$$SortMyCardsEventImplCopyWith<$Res> {
-  __$$SortMyCardsEventImplCopyWithImpl(_$SortMyCardsEventImpl _value,
-      $Res Function(_$SortMyCardsEventImpl) _then)
+class __$$RemoveSelectCardEventImplCopyWithImpl<$Res>
+    extends _$MainEventCopyWithImpl<$Res, _$RemoveSelectCardEventImpl>
+    implements _$$RemoveSelectCardEventImplCopyWith<$Res> {
+  __$$RemoveSelectCardEventImplCopyWithImpl(_$RemoveSelectCardEventImpl _value,
+      $Res Function(_$RemoveSelectCardEventImpl) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? typeSort = freezed,
-  }) {
-    return _then(_$SortMyCardsEventImpl(
-      freezed == typeSort
-          ? _value.typeSort
-          : typeSort // ignore: cast_nullable_to_non_nullable
-              as TypeSort?,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$SortMyCardsEventImpl extends _SortMyCardsEvent {
-  const _$SortMyCardsEventImpl(this.typeSort) : super._();
-
-  @override
-  final TypeSort? typeSort;
+class _$RemoveSelectCardEventImpl extends _RemoveSelectCardEvent {
+  const _$RemoveSelectCardEventImpl() : super._();
 
   @override
   String toString() {
-    return 'MainEvent.sortMyCardsEvent(typeSort: $typeSort)';
+    return 'MainEvent.removeSelectCardEvent()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SortMyCardsEventImpl &&
-            (identical(other.typeSort, typeSort) ||
-                other.typeSort == typeSort));
+            other is _$RemoveSelectCardEventImpl);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, typeSort);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$SortMyCardsEventImplCopyWith<_$SortMyCardsEventImpl> get copyWith =>
-      __$$SortMyCardsEventImplCopyWithImpl<_$SortMyCardsEventImpl>(
-          this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
@@ -551,11 +553,12 @@ class _$SortMyCardsEventImpl extends _SortMyCardsEvent {
     required TResult Function() initial,
     required TResult Function() loadCardsEvent,
     required TResult Function() pickMyCardsEvent,
-    required TResult Function(TypeSort? typeSort) sortMyCardsEvent,
+    required TResult Function() removeSelectCardEvent,
+    required TResult Function() sortMyCardsEvent,
     required TResult Function(bool? isMyCard) playCardsEvent,
     required TResult Function(CardEntity card) toggleSelectCardEvent,
   }) {
-    return sortMyCardsEvent(typeSort);
+    return removeSelectCardEvent();
   }
 
   @override
@@ -564,11 +567,12 @@ class _$SortMyCardsEventImpl extends _SortMyCardsEvent {
     TResult? Function()? initial,
     TResult? Function()? loadCardsEvent,
     TResult? Function()? pickMyCardsEvent,
-    TResult? Function(TypeSort? typeSort)? sortMyCardsEvent,
+    TResult? Function()? removeSelectCardEvent,
+    TResult? Function()? sortMyCardsEvent,
     TResult? Function(bool? isMyCard)? playCardsEvent,
     TResult? Function(CardEntity card)? toggleSelectCardEvent,
   }) {
-    return sortMyCardsEvent?.call(typeSort);
+    return removeSelectCardEvent?.call();
   }
 
   @override
@@ -577,13 +581,14 @@ class _$SortMyCardsEventImpl extends _SortMyCardsEvent {
     TResult Function()? initial,
     TResult Function()? loadCardsEvent,
     TResult Function()? pickMyCardsEvent,
-    TResult Function(TypeSort? typeSort)? sortMyCardsEvent,
+    TResult Function()? removeSelectCardEvent,
+    TResult Function()? sortMyCardsEvent,
     TResult Function(bool? isMyCard)? playCardsEvent,
     TResult Function(CardEntity card)? toggleSelectCardEvent,
     required TResult orElse(),
   }) {
-    if (sortMyCardsEvent != null) {
-      return sortMyCardsEvent(typeSort);
+    if (removeSelectCardEvent != null) {
+      return removeSelectCardEvent();
     }
     return orElse();
   }
@@ -594,6 +599,143 @@ class _$SortMyCardsEventImpl extends _SortMyCardsEvent {
     required TResult Function(_MainInitialEvent value) initial,
     required TResult Function(_LoadCardsEvent value) loadCardsEvent,
     required TResult Function(_PickMyCardsEvent value) pickMyCardsEvent,
+    required TResult Function(_RemoveSelectCardEvent value)
+        removeSelectCardEvent,
+    required TResult Function(_SortMyCardsEvent value) sortMyCardsEvent,
+    required TResult Function(_PlayCardsEvent value) playCardsEvent,
+    required TResult Function(_ToggleSelectCardEvent value)
+        toggleSelectCardEvent,
+  }) {
+    return removeSelectCardEvent(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_MainInitialEvent value)? initial,
+    TResult? Function(_LoadCardsEvent value)? loadCardsEvent,
+    TResult? Function(_PickMyCardsEvent value)? pickMyCardsEvent,
+    TResult? Function(_RemoveSelectCardEvent value)? removeSelectCardEvent,
+    TResult? Function(_SortMyCardsEvent value)? sortMyCardsEvent,
+    TResult? Function(_PlayCardsEvent value)? playCardsEvent,
+    TResult? Function(_ToggleSelectCardEvent value)? toggleSelectCardEvent,
+  }) {
+    return removeSelectCardEvent?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_MainInitialEvent value)? initial,
+    TResult Function(_LoadCardsEvent value)? loadCardsEvent,
+    TResult Function(_PickMyCardsEvent value)? pickMyCardsEvent,
+    TResult Function(_RemoveSelectCardEvent value)? removeSelectCardEvent,
+    TResult Function(_SortMyCardsEvent value)? sortMyCardsEvent,
+    TResult Function(_PlayCardsEvent value)? playCardsEvent,
+    TResult Function(_ToggleSelectCardEvent value)? toggleSelectCardEvent,
+    required TResult orElse(),
+  }) {
+    if (removeSelectCardEvent != null) {
+      return removeSelectCardEvent(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _RemoveSelectCardEvent extends MainEvent {
+  const factory _RemoveSelectCardEvent() = _$RemoveSelectCardEventImpl;
+  const _RemoveSelectCardEvent._() : super._();
+}
+
+/// @nodoc
+abstract class _$$SortMyCardsEventImplCopyWith<$Res> {
+  factory _$$SortMyCardsEventImplCopyWith(_$SortMyCardsEventImpl value,
+          $Res Function(_$SortMyCardsEventImpl) then) =
+      __$$SortMyCardsEventImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$SortMyCardsEventImplCopyWithImpl<$Res>
+    extends _$MainEventCopyWithImpl<$Res, _$SortMyCardsEventImpl>
+    implements _$$SortMyCardsEventImplCopyWith<$Res> {
+  __$$SortMyCardsEventImplCopyWithImpl(_$SortMyCardsEventImpl _value,
+      $Res Function(_$SortMyCardsEventImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$SortMyCardsEventImpl extends _SortMyCardsEvent {
+  const _$SortMyCardsEventImpl() : super._();
+
+  @override
+  String toString() {
+    return 'MainEvent.sortMyCardsEvent()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$SortMyCardsEventImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadCardsEvent,
+    required TResult Function() pickMyCardsEvent,
+    required TResult Function() removeSelectCardEvent,
+    required TResult Function() sortMyCardsEvent,
+    required TResult Function(bool? isMyCard) playCardsEvent,
+    required TResult Function(CardEntity card) toggleSelectCardEvent,
+  }) {
+    return sortMyCardsEvent();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadCardsEvent,
+    TResult? Function()? pickMyCardsEvent,
+    TResult? Function()? removeSelectCardEvent,
+    TResult? Function()? sortMyCardsEvent,
+    TResult? Function(bool? isMyCard)? playCardsEvent,
+    TResult? Function(CardEntity card)? toggleSelectCardEvent,
+  }) {
+    return sortMyCardsEvent?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadCardsEvent,
+    TResult Function()? pickMyCardsEvent,
+    TResult Function()? removeSelectCardEvent,
+    TResult Function()? sortMyCardsEvent,
+    TResult Function(bool? isMyCard)? playCardsEvent,
+    TResult Function(CardEntity card)? toggleSelectCardEvent,
+    required TResult orElse(),
+  }) {
+    if (sortMyCardsEvent != null) {
+      return sortMyCardsEvent();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_MainInitialEvent value) initial,
+    required TResult Function(_LoadCardsEvent value) loadCardsEvent,
+    required TResult Function(_PickMyCardsEvent value) pickMyCardsEvent,
+    required TResult Function(_RemoveSelectCardEvent value)
+        removeSelectCardEvent,
     required TResult Function(_SortMyCardsEvent value) sortMyCardsEvent,
     required TResult Function(_PlayCardsEvent value) playCardsEvent,
     required TResult Function(_ToggleSelectCardEvent value)
@@ -608,6 +750,7 @@ class _$SortMyCardsEventImpl extends _SortMyCardsEvent {
     TResult? Function(_MainInitialEvent value)? initial,
     TResult? Function(_LoadCardsEvent value)? loadCardsEvent,
     TResult? Function(_PickMyCardsEvent value)? pickMyCardsEvent,
+    TResult? Function(_RemoveSelectCardEvent value)? removeSelectCardEvent,
     TResult? Function(_SortMyCardsEvent value)? sortMyCardsEvent,
     TResult? Function(_PlayCardsEvent value)? playCardsEvent,
     TResult? Function(_ToggleSelectCardEvent value)? toggleSelectCardEvent,
@@ -621,6 +764,7 @@ class _$SortMyCardsEventImpl extends _SortMyCardsEvent {
     TResult Function(_MainInitialEvent value)? initial,
     TResult Function(_LoadCardsEvent value)? loadCardsEvent,
     TResult Function(_PickMyCardsEvent value)? pickMyCardsEvent,
+    TResult Function(_RemoveSelectCardEvent value)? removeSelectCardEvent,
     TResult Function(_SortMyCardsEvent value)? sortMyCardsEvent,
     TResult Function(_PlayCardsEvent value)? playCardsEvent,
     TResult Function(_ToggleSelectCardEvent value)? toggleSelectCardEvent,
@@ -634,14 +778,8 @@ class _$SortMyCardsEventImpl extends _SortMyCardsEvent {
 }
 
 abstract class _SortMyCardsEvent extends MainEvent {
-  const factory _SortMyCardsEvent(final TypeSort? typeSort) =
-      _$SortMyCardsEventImpl;
+  const factory _SortMyCardsEvent() = _$SortMyCardsEventImpl;
   const _SortMyCardsEvent._() : super._();
-
-  TypeSort? get typeSort;
-  @JsonKey(ignore: true)
-  _$$SortMyCardsEventImplCopyWith<_$SortMyCardsEventImpl> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -713,7 +851,8 @@ class _$PlayCardsEventImpl extends _PlayCardsEvent {
     required TResult Function() initial,
     required TResult Function() loadCardsEvent,
     required TResult Function() pickMyCardsEvent,
-    required TResult Function(TypeSort? typeSort) sortMyCardsEvent,
+    required TResult Function() removeSelectCardEvent,
+    required TResult Function() sortMyCardsEvent,
     required TResult Function(bool? isMyCard) playCardsEvent,
     required TResult Function(CardEntity card) toggleSelectCardEvent,
   }) {
@@ -726,7 +865,8 @@ class _$PlayCardsEventImpl extends _PlayCardsEvent {
     TResult? Function()? initial,
     TResult? Function()? loadCardsEvent,
     TResult? Function()? pickMyCardsEvent,
-    TResult? Function(TypeSort? typeSort)? sortMyCardsEvent,
+    TResult? Function()? removeSelectCardEvent,
+    TResult? Function()? sortMyCardsEvent,
     TResult? Function(bool? isMyCard)? playCardsEvent,
     TResult? Function(CardEntity card)? toggleSelectCardEvent,
   }) {
@@ -739,7 +879,8 @@ class _$PlayCardsEventImpl extends _PlayCardsEvent {
     TResult Function()? initial,
     TResult Function()? loadCardsEvent,
     TResult Function()? pickMyCardsEvent,
-    TResult Function(TypeSort? typeSort)? sortMyCardsEvent,
+    TResult Function()? removeSelectCardEvent,
+    TResult Function()? sortMyCardsEvent,
     TResult Function(bool? isMyCard)? playCardsEvent,
     TResult Function(CardEntity card)? toggleSelectCardEvent,
     required TResult orElse(),
@@ -756,6 +897,8 @@ class _$PlayCardsEventImpl extends _PlayCardsEvent {
     required TResult Function(_MainInitialEvent value) initial,
     required TResult Function(_LoadCardsEvent value) loadCardsEvent,
     required TResult Function(_PickMyCardsEvent value) pickMyCardsEvent,
+    required TResult Function(_RemoveSelectCardEvent value)
+        removeSelectCardEvent,
     required TResult Function(_SortMyCardsEvent value) sortMyCardsEvent,
     required TResult Function(_PlayCardsEvent value) playCardsEvent,
     required TResult Function(_ToggleSelectCardEvent value)
@@ -770,6 +913,7 @@ class _$PlayCardsEventImpl extends _PlayCardsEvent {
     TResult? Function(_MainInitialEvent value)? initial,
     TResult? Function(_LoadCardsEvent value)? loadCardsEvent,
     TResult? Function(_PickMyCardsEvent value)? pickMyCardsEvent,
+    TResult? Function(_RemoveSelectCardEvent value)? removeSelectCardEvent,
     TResult? Function(_SortMyCardsEvent value)? sortMyCardsEvent,
     TResult? Function(_PlayCardsEvent value)? playCardsEvent,
     TResult? Function(_ToggleSelectCardEvent value)? toggleSelectCardEvent,
@@ -783,6 +927,7 @@ class _$PlayCardsEventImpl extends _PlayCardsEvent {
     TResult Function(_MainInitialEvent value)? initial,
     TResult Function(_LoadCardsEvent value)? loadCardsEvent,
     TResult Function(_PickMyCardsEvent value)? pickMyCardsEvent,
+    TResult Function(_RemoveSelectCardEvent value)? removeSelectCardEvent,
     TResult Function(_SortMyCardsEvent value)? sortMyCardsEvent,
     TResult Function(_PlayCardsEvent value)? playCardsEvent,
     TResult Function(_ToggleSelectCardEvent value)? toggleSelectCardEvent,
@@ -874,7 +1019,8 @@ class _$ToggleSelectCardEventImpl extends _ToggleSelectCardEvent {
     required TResult Function() initial,
     required TResult Function() loadCardsEvent,
     required TResult Function() pickMyCardsEvent,
-    required TResult Function(TypeSort? typeSort) sortMyCardsEvent,
+    required TResult Function() removeSelectCardEvent,
+    required TResult Function() sortMyCardsEvent,
     required TResult Function(bool? isMyCard) playCardsEvent,
     required TResult Function(CardEntity card) toggleSelectCardEvent,
   }) {
@@ -887,7 +1033,8 @@ class _$ToggleSelectCardEventImpl extends _ToggleSelectCardEvent {
     TResult? Function()? initial,
     TResult? Function()? loadCardsEvent,
     TResult? Function()? pickMyCardsEvent,
-    TResult? Function(TypeSort? typeSort)? sortMyCardsEvent,
+    TResult? Function()? removeSelectCardEvent,
+    TResult? Function()? sortMyCardsEvent,
     TResult? Function(bool? isMyCard)? playCardsEvent,
     TResult? Function(CardEntity card)? toggleSelectCardEvent,
   }) {
@@ -900,7 +1047,8 @@ class _$ToggleSelectCardEventImpl extends _ToggleSelectCardEvent {
     TResult Function()? initial,
     TResult Function()? loadCardsEvent,
     TResult Function()? pickMyCardsEvent,
-    TResult Function(TypeSort? typeSort)? sortMyCardsEvent,
+    TResult Function()? removeSelectCardEvent,
+    TResult Function()? sortMyCardsEvent,
     TResult Function(bool? isMyCard)? playCardsEvent,
     TResult Function(CardEntity card)? toggleSelectCardEvent,
     required TResult orElse(),
@@ -917,6 +1065,8 @@ class _$ToggleSelectCardEventImpl extends _ToggleSelectCardEvent {
     required TResult Function(_MainInitialEvent value) initial,
     required TResult Function(_LoadCardsEvent value) loadCardsEvent,
     required TResult Function(_PickMyCardsEvent value) pickMyCardsEvent,
+    required TResult Function(_RemoveSelectCardEvent value)
+        removeSelectCardEvent,
     required TResult Function(_SortMyCardsEvent value) sortMyCardsEvent,
     required TResult Function(_PlayCardsEvent value) playCardsEvent,
     required TResult Function(_ToggleSelectCardEvent value)
@@ -931,6 +1081,7 @@ class _$ToggleSelectCardEventImpl extends _ToggleSelectCardEvent {
     TResult? Function(_MainInitialEvent value)? initial,
     TResult? Function(_LoadCardsEvent value)? loadCardsEvent,
     TResult? Function(_PickMyCardsEvent value)? pickMyCardsEvent,
+    TResult? Function(_RemoveSelectCardEvent value)? removeSelectCardEvent,
     TResult? Function(_SortMyCardsEvent value)? sortMyCardsEvent,
     TResult? Function(_PlayCardsEvent value)? playCardsEvent,
     TResult? Function(_ToggleSelectCardEvent value)? toggleSelectCardEvent,
@@ -944,6 +1095,7 @@ class _$ToggleSelectCardEventImpl extends _ToggleSelectCardEvent {
     TResult Function(_MainInitialEvent value)? initial,
     TResult Function(_LoadCardsEvent value)? loadCardsEvent,
     TResult Function(_PickMyCardsEvent value)? pickMyCardsEvent,
+    TResult Function(_RemoveSelectCardEvent value)? removeSelectCardEvent,
     TResult Function(_SortMyCardsEvent value)? sortMyCardsEvent,
     TResult Function(_PlayCardsEvent value)? playCardsEvent,
     TResult Function(_ToggleSelectCardEvent value)? toggleSelectCardEvent,

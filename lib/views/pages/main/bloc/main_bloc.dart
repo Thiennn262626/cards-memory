@@ -16,6 +16,7 @@ class MainBloc extends Bloc<MainEvent, MainState> {
     on<_MainInitialEvent>(_onMainInitialEvent);
     on<_LoadCardsEvent>(_onLoadCardsEvent);
     on<_PickMyCardsEvent>(_onPickMyCardsEvent);
+    on<_RemoveSelectCardEvent>(_onRemoveSelectCardEvent);
     on<_SortMyCardsEvent>(_onSortMyCardsEvent);
     on<_PlayCardsEvent>(_onPlayCardsEvent);
     on<_ToggleSelectCardEvent>(_onToggleSelectCardEvent);
@@ -53,7 +54,11 @@ class MainBloc extends Bloc<MainEvent, MainState> {
         return card; // Giữ nguyên nếu không có trong selectedCards
       }).toList();
 
-      final myCards = CardsEntity(deck: state.selectedCards);
+      final myCards = CardsEntity(
+          deck: state.selectedCards,
+          typeSort: TypeSort.none,
+          isSorted: false,
+          deckType: DeckType.custom);
       emit(state.copyWith(
           cardList: state.cardList.copyWith(deck: updatedDeck),
           myCards: myCards,
@@ -62,13 +67,34 @@ class MainBloc extends Bloc<MainEvent, MainState> {
     }
   }
 
+  FutureOr<void> _onRemoveSelectCardEvent(
+      _RemoveSelectCardEvent event, Emitter<MainState> emit) {
+    // Logic to pick cards from the card list to the player's hand
+    if (state.selectedCards.isNotEmpty) {
+      emit(state.copyWith(selectedCards: []));
+    }
+  }
+
   FutureOr<void> _onSortMyCardsEvent(
       _SortMyCardsEvent event, Emitter<MainState> emit) {
-    // Logic to sort the player's cards based on the given typeSort
     if (state.myCards.deck != null) {
-      List<CardEntity> sortedDeck = List.from(state.myCards.deck!);
-      // Add your sorting logic based on typeSort
-      emit(state.copyWith(myCards: CardsEntity(deck: sortedDeck)));
+      if (state.myCards.typeSort != TypeSort.rankOrder) {
+        List<CardEntity> sortedDeck = List.from(state.myCards.deck ?? []);
+        sortedDeck.sort((a, b) => a.indexRank.compareTo(b.indexRank));
+        final sortedCards = state.myCards
+            .copyWith(deck: sortedDeck, typeSort: TypeSort.rankOrder);
+        emit(state.copyWith(
+          myCards: sortedCards,
+        ));
+      } else {
+        List<CardEntity> sortedDeck = List.from(state.myCards.deck ?? []);
+        sortedDeck.sort((a, b) => a.indexSuit.compareTo(b.indexSuit));
+        final sortedCards = state.myCards
+            .copyWith(deck: sortedDeck, typeSort: TypeSort.flushOrder);
+        emit(state.copyWith(
+          myCards: sortedCards,
+        ));
+      }
     }
   }
 
@@ -96,9 +122,12 @@ class MainBloc extends Bloc<MainEvent, MainState> {
     if (updatedSelectedCards.contains(card)) {
       updatedSelectedCards.remove(card); // Nếu đã chọn rồi thì bỏ chọn
     } else {
-      updatedSelectedCards
-          .add(card); // Nếu chưa chọn thì thêm vào danh sách chọn
+      if (state.selectedCards.length < 13) {
+        updatedSelectedCards
+            .add(card); // Nếu chưa chọn thì thêm vào danh sách chọn
+      }
     }
+
     emit(state.copyWith(selectedCards: updatedSelectedCards));
   }
 }

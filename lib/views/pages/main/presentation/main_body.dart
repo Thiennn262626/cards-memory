@@ -1,5 +1,6 @@
 import 'package:cards/views/pages/main/bloc/main_bloc.dart';
 import 'package:cards/views/pages/main/widgets/card_list.dart';
+import 'package:cards/views/pages/main/widgets/left_control.dart';
 import 'package:cards/views/pages/main/widgets/my_card_list.dart';
 import 'package:cards/views/pages/main/widgets/right_control.dart';
 import 'package:flutter/material.dart';
@@ -18,11 +19,9 @@ class MainBody extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               // Phần bên trái với tỷ lệ 1
-              Expanded(
+              const Expanded(
                 flex: 1,
-                child: Container(
-                  color: Colors.yellowAccent,
-                ),
+                child: LeftControl(),
               ),
               Expanded(
                 flex: 8,
@@ -50,7 +49,7 @@ class MainBody extends StatelessWidget {
                         flex: 10,
                         child: CardList(),
                       ),
-                      Expanded(
+                      const Expanded(
                         flex: 3,
                         child: MyCardList(),
                       ),

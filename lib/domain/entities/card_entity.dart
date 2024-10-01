@@ -10,7 +10,7 @@ class CardEntity {
   final int value;
   final int indexRank;
   final int indexSuit;
-  bool isFaceUp;
+  final bool isFaceUp;
   final bool isJoker;
   final String? imageUrl;
 

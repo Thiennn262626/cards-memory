@@ -10,10 +10,12 @@ class MyCardList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<MainBloc, MainState>(
+      buildWhen: (previousState, currentState) {
+        return previousState.myCards != currentState.myCards;
+      },
       builder: (context, state) {
         // Lấy danh sách lá bài từ state
         final deck = state.myCards.deck;
-
         // Kiểm tra xem danh sách lá bài có rỗng hay không
         if (deck == null || deck.isEmpty) {
           return const Center(

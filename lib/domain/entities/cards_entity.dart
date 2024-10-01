@@ -17,9 +17,10 @@ class CardsEntity {
     this.isSorted,
     this.typeSort,
   });
-  CardsEntity copyWith({List<CardEntity>? deck}) {
+  CardsEntity copyWith({List<CardEntity>? deck, TypeSort? typeSort}) {
     return CardsEntity(
       deck: deck ?? this.deck,
+      typeSort: typeSort ?? this.typeSort,
     );
   }
 
@@ -171,7 +172,7 @@ enum DeckType {
       case DeckType.uno:
         return 108;
       case DeckType.custom:
-        return 0; // Không xác định, có thể là số lượng tùy chỉnh.
+        return 12; // Không xác định, có thể là số lượng tùy chỉnh.
       default:
         return 0;
     }

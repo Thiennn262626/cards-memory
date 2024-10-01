@@ -7,10 +7,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal,deprecated_member_use
 
-import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_svg/flutter_svg.dart' as _svg;
-import 'package:vector_graphics/vector_graphics.dart' as _vg;
 
 class $AssetsGifGen {
   const $AssetsGifGen();
@@ -28,11 +25,21 @@ class $AssetsIconsGen {
   /// File path: assets/icons/back.png
   AssetGenImage get back => const AssetGenImage('assets/icons/back.png');
 
+  /// File path: assets/icons/bin_close.png
+  AssetGenImage get binClose =>
+      const AssetGenImage('assets/icons/bin_close.png');
+
+  /// File path: assets/icons/bin_open.png
+  AssetGenImage get binOpen => const AssetGenImage('assets/icons/bin_open.png');
+
   /// File path: assets/icons/danger.png
   AssetGenImage get danger => const AssetGenImage('assets/icons/danger.png');
 
   /// File path: assets/icons/history.png
   AssetGenImage get history => const AssetGenImage('assets/icons/history.png');
+
+  /// File path: assets/icons/picker.png
+  AssetGenImage get picker => const AssetGenImage('assets/icons/picker.png');
 
   /// File path: assets/icons/play.png
   AssetGenImage get play => const AssetGenImage('assets/icons/play.png');
@@ -43,9 +50,22 @@ class $AssetsIconsGen {
   /// File path: assets/icons/satety.png
   AssetGenImage get satety => const AssetGenImage('assets/icons/satety.png');
 
+  /// File path: assets/icons/sort.png
+  AssetGenImage get sort => const AssetGenImage('assets/icons/sort.png');
+
   /// List of all assets
-  List<AssetGenImage> get values =>
-      [back, danger, history, play, restart, satety];
+  List<AssetGenImage> get values => [
+        back,
+        binClose,
+        binOpen,
+        danger,
+        history,
+        picker,
+        play,
+        restart,
+        satety,
+        sort
+      ];
 }
 
 class $AssetsImagesGen {
@@ -59,29 +79,12 @@ class $AssetsImagesGen {
   List<AssetGenImage> get values => [isFaceDown];
 }
 
-class $AssetsSvgGen {
-  const $AssetsSvgGen();
-
-  /// File path: assets/svg/5348799.svg
-  SvgGenImage get a5348799 => const SvgGenImage('assets/svg/5348799.svg');
-
-  /// File path: assets/svg/picker.png
-  AssetGenImage get picker => const AssetGenImage('assets/svg/picker.png');
-
-  /// File path: assets/svg/play.svg
-  SvgGenImage get play => const SvgGenImage('assets/svg/play.svg');
-
-  /// List of all assets
-  List<dynamic> get values => [a5348799, picker, play];
-}
-
 class Assets {
   Assets._();
 
   static const $AssetsGifGen gif = $AssetsGifGen();
   static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
-  static const $AssetsSvgGen svg = $AssetsSvgGen();
 }
 
 class AssetGenImage {
@@ -157,83 +160,6 @@ class AssetGenImage {
       _assetName,
       bundle: bundle,
       package: package,
-    );
-  }
-
-  String get path => _assetName;
-
-  String get keyName => _assetName;
-}
-
-class SvgGenImage {
-  const SvgGenImage(
-    this._assetName, {
-    this.size,
-    this.flavors = const {},
-  }) : _isVecFormat = false;
-
-  const SvgGenImage.vec(
-    this._assetName, {
-    this.size,
-    this.flavors = const {},
-  }) : _isVecFormat = true;
-
-  final String _assetName;
-  final Size? size;
-  final Set<String> flavors;
-  final bool _isVecFormat;
-
-  _svg.SvgPicture svg({
-    Key? key,
-    bool matchTextDirection = false,
-    AssetBundle? bundle,
-    String? package,
-    double? width,
-    double? height,
-    BoxFit fit = BoxFit.contain,
-    AlignmentGeometry alignment = Alignment.center,
-    bool allowDrawingOutsideViewBox = false,
-    WidgetBuilder? placeholderBuilder,
-    String? semanticsLabel,
-    bool excludeFromSemantics = false,
-    _svg.SvgTheme? theme,
-    ColorFilter? colorFilter,
-    Clip clipBehavior = Clip.hardEdge,
-    @deprecated Color? color,
-    @deprecated BlendMode colorBlendMode = BlendMode.srcIn,
-    @deprecated bool cacheColorFilter = false,
-  }) {
-    final _svg.BytesLoader loader;
-    if (_isVecFormat) {
-      loader = _vg.AssetBytesLoader(
-        _assetName,
-        assetBundle: bundle,
-        packageName: package,
-      );
-    } else {
-      loader = _svg.SvgAssetLoader(
-        _assetName,
-        assetBundle: bundle,
-        packageName: package,
-        theme: theme,
-      );
-    }
-    return _svg.SvgPicture(
-      loader,
-      key: key,
-      matchTextDirection: matchTextDirection,
-      width: width,
-      height: height,
-      fit: fit,
-      alignment: alignment,
-      allowDrawingOutsideViewBox: allowDrawingOutsideViewBox,
-      placeholderBuilder: placeholderBuilder,
-      semanticsLabel: semanticsLabel,
-      excludeFromSemantics: excludeFromSemantics,
-      colorFilter: colorFilter ??
-          (color == null ? null : ColorFilter.mode(color, colorBlendMode)),
-      clipBehavior: clipBehavior,
-      cacheColorFilter: cacheColorFilter,
     );
   }
 

@@ -1,3 +1,5 @@
+import 'package:badges/badges.dart' as badges;
+import 'package:cards/core/app_theme.dart';
 import 'package:cards/gen/assets.gen.dart';
 import 'package:cards/views/pages/main/bloc/main_bloc.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +15,7 @@ class RightControl extends StatelessWidget {
     return BlocBuilder<MainBloc, MainState>(
       builder: (context, state) {
         return Container(
-          color: Colors.greenAccent,
+          color: Colors.transparent,
           child: Column(
             children: [
               IconButton(
@@ -50,29 +52,59 @@ class PickMyCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 50),
-      child: GestureDetector(
-        onTap: () {
-          context.read<MainBloc>().state.selectedCards.length != 13
-              ? ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                    content: Text('Chưa chọn đủ 13 lá bài!'),
-                    duration: Duration(seconds: 1),
-                    behavior: SnackBarBehavior.fixed, // Nổi lên giữa màn hình
-                    backgroundColor: Colors.redAccent,
-                  ),
-                )
-              : context
-                  .read<MainBloc>()
-                  .add(const MainEvent.pickMyCardsEvent());
-        },
-        child: Image.asset(
-          Assets.svg.picker.path,
-          width: 50,
-          height: 50,
-        ),
-      ),
+    return BlocBuilder<MainBloc, MainState>(
+      buildWhen: (previousState, currentState) {
+        // Chỉ xây dựng lại widget khi danh sách selectedCards thay đổi
+        return previousState.selectedCards != currentState.selectedCards;
+      },
+      builder: (context, state) {
+        final selectedCards = state.selectedCards.length ?? 0;
+        return Padding(
+          padding: const EdgeInsets.symmetric(vertical: 50),
+          child: badges.Badge(
+            badgeAnimation: const badges.BadgeAnimation.scale(
+              animationDuration: Duration(milliseconds: 300),
+              curve: Curves.easeInOutCubic,
+            ),
+            badgeContent: Text(
+              selectedCards.toString(),
+              style: const TextStyle(color: Colors.white),
+            ),
+            child: GestureDetector(
+              onTap: () {
+                context.read<MainBloc>().state.selectedCards.length != 13
+                    ? ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text(
+                            'Tiếp tục khi chọn đủ 13 lá bài!',
+                            style: TextStyle(
+                              color: AppColorScheme.white,
+                            ),
+                          ),
+                          duration: const Duration(seconds: 1),
+                          backgroundColor: AppColorScheme.black,
+                          behavior: SnackBarBehavior
+                              .floating, // Nổi lên giữa màn hình
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(24),
+                          ),
+                          margin: const EdgeInsets.symmetric(
+                              horizontal: 20, vertical: 10),
+                        ),
+                      )
+                    : context
+                        .read<MainBloc>()
+                        .add(const MainEvent.pickMyCardsEvent());
+              },
+              child: Image.asset(
+                Assets.icons.picker.path,
+                width: 50,
+                height: 50,
+              ),
+            ),
+          ),
+        );
+      },
     );
   }
 }
