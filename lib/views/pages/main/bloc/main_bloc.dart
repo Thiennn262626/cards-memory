@@ -4,6 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:cards/common/bloc/api_status.dart';
 import 'package:cards/domain/entities/card_entity.dart';
 import 'package:cards/domain/entities/cards_entity.dart';
+import 'package:cards/domain/entities/game_data_entity.dart';
 import 'package:cards/domain/entities/warning_entity.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -12,7 +13,7 @@ part 'main_event.dart';
 part 'main_state.dart';
 
 class MainBloc extends Bloc<MainEvent, MainState> {
-  MainBloc() : super(const MainState()) {
+  MainBloc() : super(MainState()) {
     on<_MainInitialEvent>(_onMainInitialEvent);
     on<_LoadCardsEvent>(_onLoadCardsEvent);
     on<_PickMyCardsEvent>(_onPickMyCardsEvent);
@@ -100,31 +101,69 @@ class MainBloc extends Bloc<MainEvent, MainState> {
 
   FutureOr<void> _onPlayCardsEvent(
       _PlayCardsEvent event, Emitter<MainState> emit) {
-    // Logic to handle playing cards
-    if (event.isMyCard == true &&
-        state.myCards.deck != null &&
-        state.myCards.deck!.isNotEmpty) {
-      final playedCard =
-          state.myCards.deck![0]; // Example: playing the first card
-      final updatedMyCards = CardsEntity(
-          deck: state.myCards.deck!.sublist(1)); // Remove played card
-      emit(state.copyWith(myCards: updatedMyCards));
-      // Add additional logic for handling the played card
+    // Kiểm tra xem có quân bài nào được chọn không
+    if (state.selectedCards.isEmpty) {
+    } else {
+      // Tạo một bản sao của danh sách các lá bài đã chọn để kiểm tra
+      final selectedCards = List<CardEntity>.from(state.selectedCards);
+
+      // TODO: Kiểm tra lượt đánh có hợp lệ không (đây là chỗ bạn có thể viết logic để kiểm tra rác, đôi, ba, tứ quý,...)
+
+      // Sau khi đã kiểm tra hợp lệ, tiếp tục các bước sau:
+
+      // Ghi lại lịch sử đánh bài
+      // final newHistory = List.from(state.historyCards);
+      // newHistory.add(); // Ghi lại các lá bài đã đánh vào lịch sử
+
+      // Loại bỏ các lá bài đã đánh từ `myCards`
+      final updatedMyCards = state.myCards.deck!
+          .where((card) => !selectedCards.contains(card))
+          .toList();
+
+      // Úp mặt những lá bài còn lại trong tay (nếu cần)
+      final updatedDeck =
+          updatedMyCards.map((card) => card.copyWith(isFaceUp: false)).toList();
+
+      // Cập nhật lại state
+      emit(state.copyWith(
+        selectedCards: [],
+        // Đã đánh xong, reset selectedCards
+        myCards: state.myCards.copyWith(deck: updatedDeck),
+        // Cập nhật lại bộ bài của người chơi
+        // historyCards: newHistory, // Ghi lại lịch sử
+      ));
     }
   }
 
-  // Hàm xử lý chọn/deselect lá bài
   FutureOr<void> _onToggleSelectCardEvent(
       _ToggleSelectCardEvent event, Emitter<MainState> emit) {
     final card = event.card;
     List<CardEntity> updatedSelectedCards = List.from(state.selectedCards);
 
-    if (updatedSelectedCards.contains(card)) {
-      updatedSelectedCards.remove(card); // Nếu đã chọn rồi thì bỏ chọn
+    // Kiểm tra xem đã có lá bài nào được chọn hay chưa
+    if (updatedSelectedCards.isNotEmpty) {
+      final lastSelect = updatedSelectedCards.last;
+      // Nếu lá bài đã được chọn
+      if (updatedSelectedCards.contains(card)) {
+        updatedSelectedCards.remove(card); // Bỏ chọn lá bài
+      } else {
+        // Kiểm tra xem lá bài cuối cùng và lá bài hiện tại có cùng thuộc danh sách không
+        if (state.cardList.deck!.contains(lastSelect) &&
+            state.cardList.deck!.contains(card)) {
+          if (updatedSelectedCards.length < 13) {
+            updatedSelectedCards.add(card); // Thêm lá bài vào danh sách chọn
+          }
+        } else if (!state.cardList.deck!.contains(card) &&
+            !state.cardList.deck!.contains(lastSelect)) {
+          if (updatedSelectedCards.length < 13) {
+            updatedSelectedCards.add(card); // Thêm lá bài vào danh sách chọn
+          }
+        }
+      }
     } else {
-      if (state.selectedCards.length < 13) {
-        updatedSelectedCards
-            .add(card); // Nếu chưa chọn thì thêm vào danh sách chọn
+      // Nếu không có lá bài nào được chọn
+      if (updatedSelectedCards.length < 13) {
+        updatedSelectedCards.add(card); // Thêm lá bài vào danh sách chọn
       }
     }
 

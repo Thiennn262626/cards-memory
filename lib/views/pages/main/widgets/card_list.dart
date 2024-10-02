@@ -57,7 +57,7 @@ class CardList extends StatelessWidget {
                         physics: const NeverScrollableScrollPhysics(),
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: groupedCards[suit]!.length,
-                          childAspectRatio: state.picked ? 0.8 : 0.75,
+                          childAspectRatio: state.picked ? 0.9 : 0.75,
                           crossAxisSpacing: 8,
                         ),
                         itemCount: groupedCards[suit]!.length,

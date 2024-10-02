@@ -15,7 +15,7 @@ class LeftControl extends StatelessWidget {
     return BlocBuilder<MainBloc, MainState>(
       builder: (context, state) {
         return Container(
-          color: Colors.transparent,
+          color: Colors.yellowAccent,
           padding: EdgeInsets.only(bottom: state.picked ? 15 : 30),
           child: Column(
             children: [

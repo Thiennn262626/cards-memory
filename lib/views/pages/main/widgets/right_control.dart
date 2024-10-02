@@ -15,7 +15,7 @@ class RightControl extends StatelessWidget {
     return BlocBuilder<MainBloc, MainState>(
       builder: (context, state) {
         return Container(
-          color: Colors.transparent,
+          color: Colors.redAccent,
           child: Column(
             children: [
               IconButton(
@@ -166,6 +166,7 @@ class _FireButtonState extends State<FireButton> with TickerProviderStateMixin {
         onTap: () {
           _onTap();
           print("Button 3 tapped");
+          context.read<MainBloc>().add(const MainEvent.playCardsEvent());
         },
         child: AnimatedBuilder(
           animation: _controller,
